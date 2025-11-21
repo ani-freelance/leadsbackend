@@ -7,6 +7,7 @@ const Followup = sequelize.define("Followup", {
   comment: DataTypes.TEXT,
   status: DataTypes.STRING,
   nextFollowUpDate: DataTypes.DATE,
+  executiveId: DataTypes.INTEGER,
 });
 
 module.exports = Followup;

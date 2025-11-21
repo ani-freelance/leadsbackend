@@ -17,3 +17,19 @@ exports.getLeads = async (req, res) => {
     res.status(400).json({ message: err.message });
   }
 };
+exports.followUpLead = async (req, res) => {
+  try {
+    const followup = await LeadService.followUpLead(req.params.id, req.body);
+    res.json(followup);
+  } catch (err) {
+    res.status(400).json({ message: err.message });
+  }
+};
+
+exports.getFollowUps = async (req, res) => {
+  try {
+    const followups = await LeadService.getFollowUps(req.params.id);  
+  } catch (err) {
+    res.status(400).json({ message: err.message });
+  }
+};
