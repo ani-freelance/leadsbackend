@@ -8,3 +8,15 @@ exports.login = async (req, res) => {
     res.status(400).json({ message: err.message });
   }
 };
+
+exports.register = async (req, res) => {
+  try {
+    const user = await AuthService.register(req.body);
+
+    return res.status(201).json({
+      message: "User registered successfully"
+    });
+  } catch (err) {
+    return res.status(400).json({ message: err.message });
+  }
+};

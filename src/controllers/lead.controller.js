@@ -3,7 +3,9 @@ const LeadService = require("../services/lead.service");
 exports.createLead = async (req, res) => {
   try {
     const lead = await LeadService.createLead(req.body);
-    res.json(lead);
+      return res.status(201).json({
+      message: "Lead created successfully"
+    });
   } catch (err) {
     res.status(400).json({ message: err.message });
   }

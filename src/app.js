@@ -8,7 +8,7 @@ app.use(express.json());
 
 // Routes
 app.use("/auth", require("./routes/auth.routes"));
-// app.use("/leads", require("./routes/lead.routes"));
+app.use("/leads", require("./routes/lead.routes"));
 app.use("/ping", require("./routes/ping.routes"));
 
 sequelize.sync();

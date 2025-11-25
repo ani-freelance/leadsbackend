@@ -1,0 +1,49 @@
+meta {
+  name: Create Lead
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:5000/leads
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Authorization: Bearer {{token}}
+}
+
+body:json {
+  {
+    "name": "John Doe",
+    "email": "john@example.com",
+    "alternameEmail": ["john.alt1@example.com", "john.alt2@example.com"],
+    "phone": "9876543210",
+    "alternamePhone": "9123456780",
+    "expectedAmount": 250000.50,
+    "expectedClosingDate": "2025-03-15",
+    "company": "ABC Pvt Ltd",
+    "companyServices": ["IT Services", "Consulting"],
+    "status": "New",
+    "designation": "Purchase Manager",
+    "department": "Procurement",
+    "address": "123, MG Road, Sector 10",
+    "country": "India",
+    "state": "Maharashtra",
+    "city": "Mumbai",
+    "pincode": "400001",
+    "skyupeId": "john.doe.skype",
+    "website": "https://abc-company.com",
+    "tendersInterested": "Construction tenders, Material supply tenders",
+    "remarks": "Very good potential client",
+    "lastFollowUpDate": "2025-03-10",
+    "assignedTo": 5
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

@@ -6,14 +6,28 @@ const Followup = require("./Followup");
 const Sample = require("./Sample");
 const Subscription = require("./Subscription");
 const Activity = require("./Activity");
+const Role = require("./Role");
+const Permission = require("./Permission");
+const RolePermission = require("./RolePermission");
+
 
 User.hasMany(Lead, { foreignKey: "assignedTo" });
-Lead.belongsTo(User, { foreignKey: "assignedTo" });
+// Lead.belongsTo(User, { foreignKey: "assignedTo" });
 
 Lead.hasMany(Followup, { foreignKey: "leadId" });
 Lead.hasMany(Sample, { foreignKey: "leadId" });
 Lead.hasOne(Subscription, { foreignKey: "leadId" });
 Lead.hasMany(Activity, { foreignKey: "leadId" });
+
+User.belongsTo(Role, { foreignKey: "roleId" });
+User.belongsTo(User, { foreignKey: "adminId", as: "admin" });
+
+Lead.belongsTo(User, { foreignKey: "assignedTo", as: "executive" });
+Lead.belongsTo(User, { foreignKey: "createdBy", as: "creator" });
+
+Role.belongsToMany(Permission, { through: RolePermission });
+Permission.belongsToMany(Role, { through: RolePermission });
+
 
 module.exports = {
   sequelize,
@@ -23,4 +37,7 @@ module.exports = {
   Sample,
   Subscription,
   Activity,
+  Role,
+  Permission,
+  RolePermission,
 };

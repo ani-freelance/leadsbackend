@@ -1,0 +1,29 @@
+meta {
+  name: Register
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:5000/auth/register
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "name": "Test User",
+    "email": "test@example.com",
+    "password": "password123",
+    "roleId": 3,
+    "adminId": 1
+  }
+}
+
+settings {
+  encodeUrl: true
+}
