@@ -8,7 +8,9 @@ exports.login = async ({ email, password }) => {
   const isMatch = await bcrypt.compare(password, user.password);
   if (!isMatch) throw new Error("Invalid credentials");
 
-  const token = jwt.sign({ id: user.id, role: user.role }, process.env.JWT_SECRET);
+  const token = jwt.sign({ id: user.id, role: user.roleId }, process.env.JWT_SECRET);
+
+  delete user.dataValues.password; // Remove password from returned user object
 
   return { token, user };
 };

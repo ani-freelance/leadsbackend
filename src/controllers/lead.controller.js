@@ -22,7 +22,9 @@ exports.getLeads = async (req, res) => {
 exports.followUpLead = async (req, res) => {
   try {
     const followup = await LeadService.followUpLead(req.params.id, req.body);
-    res.json(followup);
+      return res.status(200).json({
+      message: "followup added successfully",followup
+    });
   } catch (err) {
     res.status(400).json({ message: err.message });
   }
@@ -31,6 +33,7 @@ exports.followUpLead = async (req, res) => {
 exports.getFollowUps = async (req, res) => {
   try {
     const followups = await LeadService.getFollowUps(req.params.id);  
+    res.status(200).json(followups);
   } catch (err) {
     res.status(400).json({ message: err.message });
   }

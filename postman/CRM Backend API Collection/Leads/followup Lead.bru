@@ -1,0 +1,33 @@
+meta {
+  name: followup Lead
+  type: http
+  seq: 3
+}
+
+post {
+  url: http://69.62.82.211:5000/leads/1/followup
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Authorization: Bearer {{token}}
+}
+
+body:json {
+  
+  
+  {
+   "comment":"test comment 2",
+    "status":"in progress",
+    "executiveId":1,
+    "nextFollowUpDate": "2025-03-15"
+  
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
