@@ -1,0 +1,16 @@
+meta {
+  name: industries
+  type: http
+  seq: 2
+}
+
+get {
+  url: http://localhost:5000/masterdata/districts
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

@@ -1,0 +1,16 @@
+meta {
+  name: organisations
+  type: http
+  seq: 4
+}
+
+get {
+  url: http://localhost:5000/masterdata/districts
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

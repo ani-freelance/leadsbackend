@@ -1,0 +1,16 @@
+meta {
+  name: get Single Tender
+  type: http
+  seq: 3
+}
+
+get {
+  url: http://localhost:5000/tenders/1
+  body: json
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

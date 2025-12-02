@@ -5,14 +5,9 @@ meta {
 }
 
 get {
-  url: http://localhost:5000/leads?createdAt_gte=2025-12-01&id=2
+  url: http://localhost:5000/leads/1/activity
   body: none
   auth: inherit
-}
-
-params:query {
-  createdAt_gte: 2025-12-01
-  id: 2
 }
 
 headers {

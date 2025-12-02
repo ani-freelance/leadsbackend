@@ -10,6 +10,8 @@ app.use(express.json());
 app.use("/auth", require("./routes/auth.routes"));
 app.use("/leads", require("./routes/lead.routes"));
 app.use("/ping", require("./routes/ping.routes"));
+app.use("/masterdata", require("./routes/masterData.routes"));
+app.use("/tenders", require("./routes/tender.routes"));
 
 sequelize.sync();
 

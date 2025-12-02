@@ -1,0 +1,15 @@
+meta {
+  name: districts
+  type: http
+  seq: 1
+}
+
+get {
+  url: http://localhost:5000/masterdata/districts
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+}

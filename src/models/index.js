@@ -9,6 +9,11 @@ const Activity = require("./Activity");
 const Role = require("./Role");
 const Permission = require("./Permission");
 const RolePermission = require("./RolePermission");
+const MasterDistrict = require("./MasterDistrict");
+const MasterIndustry = require("./MasterIndustry");
+const MasterKeyword = require("./MasterKeyword");
+const MasterOrganisation = require("./MasterOrganisation");
+const Tender = require("./Tender");
 
 
 User.hasMany(Lead, { foreignKey: "assignedTo" });
@@ -40,4 +45,9 @@ module.exports = {
   Role,
   Permission,
   RolePermission,
+  MasterDistrict,
+  MasterIndustry,
+  MasterKeyword,
+  MasterOrganisation,
+  Tender
 };
