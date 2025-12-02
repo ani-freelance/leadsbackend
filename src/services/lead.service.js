@@ -1,11 +1,26 @@
-const { Lead, Followup } = require("../models");
-
+const { Lead, Followup,Activity } = require("../models");
+const { Op } = require("sequelize");
 exports.createLead = async (data) => {
   return Lead.create(data);
 };
 
 exports.getLeads = async (filters) => {
-  return Lead.findAll({ where: filters });
+  const where = {...filters};
+  const query = { ...filters };
+
+    if (query.createdAt_gte) {
+    where.createdAt = { ...where.createdAt, [Op.gte]: new Date(query.createdAt_gte) };
+    delete where.createdAt_gte;
+  }
+
+  // createdAt <=
+  if (query.createdAt_lte) {
+    where.createdAt = { ...where.createdAt, [Op.lte]: new Date(query.createdAt_lte) };
+    delete where.createdAt_lte;
+  }
+
+  console.log("Filters in service:", filters);
+  return Lead.findAll({ where });
 };
 
 exports.followUpLead = async (leadId, followUpData) => {
@@ -22,5 +37,30 @@ exports.getFollowUps = async (leadId) => {
   if (!lead) {
     throw new Error("Lead not found");
   }
-  return Followup.findAll({ where: { leadId } });
+
+  const where = {...filters};
+  const query = { ...filters };
+
+    if (query.createdAt_gte) {
+    where.createdAt = { ...where.createdAt, [Op.gte]: new Date(query.createdAt_gte) };
+    delete where.createdAt_gte;
+  }
+
+  // createdAt <=
+  if (query.createdAt_lte) {
+    where.createdAt = { ...where.createdAt, [Op.lte]: new Date(query.createdAt_lte) };
+    delete where.createdAt_lte;
+  }
+
+  where.leadId = leadId;
+
+
+  return Followup.findAll({ where });
 }
+exports.getActivity = async (leadId) => {
+  const lead = await Lead.findByPk(leadId); 
+  if (!lead) {
+    throw new Error("Lead not found");
+  }
+  return Activity.findAll({ where: { leadId } });
+};

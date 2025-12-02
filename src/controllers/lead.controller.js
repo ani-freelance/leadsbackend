@@ -13,6 +13,7 @@ exports.createLead = async (req, res) => {
 
 exports.getLeads = async (req, res) => {
   try {
+      console.log("Query params in controller:", req.query);
     const leads = await LeadService.getLeads(req.query);
     res.json(leads);
   } catch (err) {
@@ -34,6 +35,15 @@ exports.getFollowUps = async (req, res) => {
   try {
     const followups = await LeadService.getFollowUps(req.params.id);  
     res.status(200).json(followups);
+  } catch (err) {
+    res.status(400).json({ message: err.message });
+  }
+};
+
+exports.getActivity = async (req, res) => {
+  try {
+    const activity = await LeadService.getActivity(req.params.id);
+    res.status(200).json(activity);
   } catch (err) {
     res.status(400).json({ message: err.message });
   }

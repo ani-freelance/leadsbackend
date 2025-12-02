@@ -6,5 +6,6 @@ router.post("/", LeadController.createLead);
 router.get("/", LeadController.getLeads);
 router.post("/:id/followup", LeadController.followUpLead);
 router.get("/:id/followup", LeadController.getFollowUps);
+router.get("/:id/activity", LeadController.getActivity);
 
 module.exports = router;
