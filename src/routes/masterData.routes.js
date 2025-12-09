@@ -9,5 +9,6 @@ router.get("/industries", masterController.getIndustries);
 router.get("/keywords", masterController.getKeywords);
 router.get("/organisations", masterController.getOrganisations);
 router.get("/states", masterController.getStates);
+router.get("/statuses", masterController.getStatuses);
 
 module.exports = router;

@@ -45,3 +45,12 @@ exports.getStates = async (req, res) => {
     res.status(500).json({ success: false, message: err.message });
   }   
 }
+
+exports.getStatuses = async (req, res) => {
+  try {
+    const data = await masterService.getStatuses(); 
+    res.json(data);
+  } catch (err) {
+    res.status(500).json({ success: false, message: err.message });
+  }   
+}

@@ -26,6 +26,7 @@ const Lead = sequelize.define("Lead", {
   remarks: DataTypes.TEXT,
   lastFollowUpDate: DataTypes.DATE,
   assignedTo: DataTypes.INTEGER,
+  source: DataTypes.STRING,
   createdAt: { type: DataTypes.DATE, defaultValue: DataTypes.NOW },
   updatedAt: { type: DataTypes.DATE, defaultValue: DataTypes.NOW },
   createdBy: DataTypes.INTEGER,

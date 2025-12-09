@@ -15,6 +15,7 @@ const MasterKeyword = require("./MasterKeyword");
 const MasterOrganisation = require("./MasterOrganisation");
 const Tender = require("./Tender");
 const MasterState = require("./MasterState");
+const MasterStatus = require("./MasterStatus");
 
 
 User.hasMany(Lead, { foreignKey: "assignedTo" });
@@ -51,5 +52,6 @@ module.exports = {
   MasterKeyword,
   MasterOrganisation,
   Tender,
-  MasterState
+  MasterState,
+  MasterStatus
 };

@@ -3,7 +3,8 @@ const {
   MasterIndustry,
   MasterKeyword,
   MasterOrganisation,
-  MasterState
+  MasterState,
+  MasterStatus
 } = require("../models");
 
 class MasterDataService {
@@ -26,6 +27,9 @@ class MasterDataService {
 
   async getStates() {
     return MasterState.findAll({ where: { active: 1 } });
+  }
+  async getStatuses() {
+    return MasterStatus.findAll({ where: { active: 1 } });
   }
 }
 
