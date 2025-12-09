@@ -33,7 +33,7 @@ const MasterState = sequelize.define("MasterState", {
     updated_at: DataTypes.DATE
 
   }, {
-    tableName: "md_states",
+    tableName: "states",
     timestamps: false
   });
 
