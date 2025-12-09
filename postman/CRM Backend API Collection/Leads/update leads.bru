@@ -1,11 +1,11 @@
 meta {
-  name: Create Lead
+  name: update leads
   type: http
-  seq: 1
+  seq: 6
 }
 
-post {
-  url: http://69.62.82.211:5000/leads/
+put {
+  url: http://69.62.82.211:5000/leads/1
   body: json
   auth: inherit
 }
@@ -41,6 +41,7 @@ body:json {
     "remarks": "Very good potential client",
     "lastFollowUpDate": "2025-03-10",
     "assignedTo": 1,
+    "source":"google",
     "createdBy": 1
   }
 }
