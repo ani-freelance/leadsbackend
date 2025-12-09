@@ -14,6 +14,7 @@ const MasterIndustry = require("./MasterIndustry");
 const MasterKeyword = require("./MasterKeyword");
 const MasterOrganisation = require("./MasterOrganisation");
 const Tender = require("./Tender");
+const MasterState = require("./MasterState");
 
 
 User.hasMany(Lead, { foreignKey: "assignedTo" });
@@ -49,5 +50,6 @@ module.exports = {
   MasterIndustry,
   MasterKeyword,
   MasterOrganisation,
-  Tender
+  Tender,
+  MasterState
 };

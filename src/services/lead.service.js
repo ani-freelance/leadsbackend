@@ -32,7 +32,7 @@ exports.followUpLead = async (leadId, followUpData) => {
   return Followup.create({ leadId, ...followUpData });
 };
 
-exports.getFollowUps = async (leadId) => {
+exports.getFollowUps = async (leadId,filters) => {
   const lead = await Lead.findByPk(leadId);
   if (!lead) {
     throw new Error("Lead not found");
@@ -57,6 +57,15 @@ exports.getFollowUps = async (leadId) => {
 
   return Followup.findAll({ where });
 }
+
+exports.updateLead = async (leadId, updateData) => {
+  const lead = await Lead.findByPk(leadId);
+  if (!lead) {
+    throw new Error("Lead not found");
+  } 
+  return lead.update(updateData);
+}
+
 exports.getActivity = async (leadId) => {
   const lead = await Lead.findByPk(leadId); 
   if (!lead) {

@@ -2,7 +2,8 @@ const {
   MasterDistrict,
   MasterIndustry,
   MasterKeyword,
-  MasterOrganisation
+  MasterOrganisation,
+  MasterState
 } = require("../models");
 
 class MasterDataService {
@@ -21,6 +22,10 @@ class MasterDataService {
 
   async getOrganisations() {
     return MasterOrganisation.findAll({ where: { active: 1 } });
+  }
+
+  async getStates() {
+    return MasterState.findAll({ where: { active: 1 } });
   }
 }
 

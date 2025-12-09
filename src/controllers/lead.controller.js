@@ -11,6 +11,17 @@ exports.createLead = async (req, res) => {
   }
 };
 
+exports.updateLead = async (req, res) => {
+  try {
+    const lead = await LeadService.updateLead(req.params.id, req.body);   
+    return res.status(200).json({
+      message: "Lead updated successfully",lead
+    });
+  } catch (err) {
+    res.status(400).json({ message: err.message });
+  }
+};
+
 exports.getLeads = async (req, res) => {
   try {
       console.log("Query params in controller:", req.query);
@@ -33,7 +44,7 @@ exports.followUpLead = async (req, res) => {
 
 exports.getFollowUps = async (req, res) => {
   try {
-    const followups = await LeadService.getFollowUps(req.params.id);  
+    const followups = await LeadService.getFollowUps(req.params.id,req.query);  
     res.status(200).json(followups);
   } catch (err) {
     res.status(400).json({ message: err.message });

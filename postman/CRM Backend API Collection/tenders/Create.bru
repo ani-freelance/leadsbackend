@@ -6,10 +6,110 @@ meta {
 
 post {
   url: http://localhost:5000/tenders
-  body: none
+  body: json
   auth: inherit
+}
+
+body:json {
+  {
+    "type_id": "1",
+    "type_title": "Open Tender",
+  
+    "category_id": "5",
+    "category_title": "Construction",
+  
+    "org_id": "12",
+    "org_title": "Public Works Department",
+    "org_chain": "PWD > Civil Works",
+  
+    "ref_no": "PWD/2025/1034",
+    "tender_no": "TN-45032",
+  
+    "title": "Construction of RCC Road at Sector 21",
+    "description": "Tender for construction of RCC concrete road with drainage and footpath.",
+  
+    "website": "https://tenders.gov.in",
+    "link": "https://tenders.gov.in/tender/45032",
+    "link_short": "https://bit.ly/tn45032",
+  
+    "is_gem": 0,
+    "is_global": 0,
+    "corrigendum": 0,
+  
+    "fee": 2500.00,
+    "fee_exemption_allowed": 1,
+    "fee_payable_to": "Executive Engineer",
+    "fee_payable_at": "PWD Office, Mumbai",
+  
+    "emd_amount": 50000.00,
+    "emd_exemption_allowed": 0,
+    "emd_payable_to": "Executive Engineer",
+    "emd_payable_at": "PWD Treasury",
+    "emd_type": "DD",
+    "emd_percentage": "2%",
+  
+    "value": 2500000.00,
+    "form_of_contract": "Item Rate",
+    "contract_type": "Construction Work",
+  
+    "published_date": "2025-01-20",
+    "bid_doc_start_date": "2025-01-21",
+    "bid_doc_end_date": "2025-02-10",
+    "bid_sub_start_date": "2025-01-25",
+    "bid_sub_end_date": "2025-02-12",
+    "bid_open_date": "2025-02-15",
+    "bid_validity": "90 Days",
+    "period_of_work": "180 Days",
+  
+    "industry_id": "8",
+    "industry_title": "Infrastructure",
+    "sub_industry_id": "82",
+    "sub_industry_title": "Road Works",
+  
+    "product_id": "701",
+    "product_title": "RCC Material",
+  
+    "keywords": "RCC, Road Construction, Civil Work",
+  
+    "country_id": "101",
+    "country_title": "India",
+    "state_id": "27",
+    "state_title": "Maharashtra",
+    "district_id": "512",
+    "district_title": "Mumbai",
+    "pincode": "400001",
+    "location": "Mumbai City",
+    "slug": "construction-of-rcc-road-sector-21",
+  
+    "is_new": 1,
+    "is_active": 1,
+    "activated_at": "2025-01-20 10:00:00",
+  
+    "is_archived": 0,
+    "archived_at": null,
+  
+    "has_result": 0,
+    "resulted_at": null,
+  
+    "active": 1,
+  
+    "created_date": "2025-01-20",
+    "created_time": "10:15 AM",
+    "created_at": "2025-01-20 10:15:00",
+    "updated_at": null,
+  
+    "data_provider": "Internal Team",
+    "dp_json_data": "{\"source\": \"internal\", \"quality\": \"verified\"}",
+    "dp_ref_no": "DP-98345",
+    "dp_date": "2025-01-20",
+    "dp_title": "RCC Road Tender Extract",
+    "dp_description": "Extracted tender information from official PWD source.",
+    "dp_has_doc": 1,
+    "dp_doc_path": "https://docs.company.com/tenders/98345.pdf"
+  }
 }
 
 settings {
   encodeUrl: true
+  timeout: 0
 }
