@@ -1,8 +1,8 @@
-const {userService} = require('../services/user.service');
+const userService = require('../services/user.service');
 
 exports.getUserById = async (req, res) => {
   try {
-    const user = await userService.getUserById(req.params.id);  
+    const user = await userService.getUserById(req.params.id);
     res.json(user);
   } catch (err) {
     res.status(500).json({ message: err.message });
