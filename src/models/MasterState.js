@@ -37,5 +37,4 @@ const MasterState = sequelize.define("MasterState", {
     timestamps: false
   });
 
-  return State;
 module.exports = MasterState;
